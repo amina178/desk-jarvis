@@ -146,10 +146,14 @@ To try the notebooks before recording: `python scripts/make_demo_data.py`
 
 - **Docker**: `docker build -t desk-jarvis . && docker run -p 7860:7860 desk-jarvis`,
   then open http://localhost:7860.
-- **Hugging Face Spaces**: `.github/workflows/sync-to-hf.yml` pushes the app to
-  the Space `<HF_USERNAME>/desk-jarvis` (Docker SDK) on every push to `main`.
-  One-time setup: create the empty Space, add the repository secret
-  `HF_TOKEN` (write token) and the variable `HF_USERNAME`.
+- **Streamlit Community Cloud** (free, used for the public demo): deploy
+  `app/streamlit_app.py` from this repo with Python 3.11. `packages.txt`
+  installs the system libraries MediaPipe needs; the app downloads the
+  MediaPipe models on first start.
+- **Hugging Face Spaces** (Docker): `.github/workflows/sync-to-hf.yml`
+  uploads the app on every push to `main` when the secret `HF_TOKEN` and the
+  variable `HF_USERNAME` are set. Note: since mid-2026 new free HF accounts
+  often cannot start CPU Spaces without PRO.
 - **CI**: `.github/workflows/ci.yml` runs flake8 and pytest (with the real
   MediaPipe models) on every push.
 

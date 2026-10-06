@@ -17,6 +17,7 @@ import pandas as pd
 import streamlit as st
 
 import _bootstrap  # noqa: F401  (adds src/ to sys.path)
+from deskjarvis import config as cfg
 from deskjarvis.pipeline import Analyzer, Settings
 from deskjarvis.video import analyze_video, blinks_per_minute, summarize
 
@@ -29,6 +30,22 @@ GESTURE_RU = {"like": "👍 следующий слайд", "dislike": "👎 п�
               "palm": "✋ микрофон", "peace": "✌️ скриншот"}
 
 st.set_page_config(page_title="Desk Jarvis", page_icon="🖐", layout="wide")
+
+
+@st.cache_resource(show_spinner="Downloading MediaPipe models (first run)…")
+def ensure_mediapipe_models() -> None:
+    """Cloud hosts start from the git repo, which does not contain the
+    MediaPipe .task files: fetch them once per server process."""
+    import urllib.request
+
+    cfg.MODELS_DIR.mkdir(parents=True, exist_ok=True)
+    for name, url in cfg.MODEL_URLS.items():
+        target = cfg.MODELS_DIR / f"{name}.task"
+        if not target.exists():
+            urllib.request.urlretrieve(url, target)
+
+
+ensure_mediapipe_models()
 st.title("Desk Jarvis")
 st.caption("CV-ассистент рабочего места: жесты, осанка и усталость глаз "
            "по обычной веб-камере. Кадры обрабатываются в памяти и не "
