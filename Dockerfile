@@ -3,7 +3,7 @@ FROM python:3.11-slim
 
 # OpenCV / MediaPipe need these shared libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        libgl1 libglib2.0-0 && \
+        libgl1 libglib2.0-0 libegl1 libgles2 && \
     rm -rf /var/lib/apt/lists/*
 
 # HF Spaces run the container as a non-root user with uid 1000
@@ -22,4 +22,6 @@ RUN pip install --no-cache-dir --user --no-deps -e . && \
 EXPOSE 7860
 CMD ["streamlit", "run", "app/streamlit_app.py", \
      "--server.port=7860", "--server.address=0.0.0.0", \
-     "--server.headless=true"]
+     "--server.headless=true", \
+     "--server.enableXsrfProtection=false", \
+     "--server.enableCORS=false"]
