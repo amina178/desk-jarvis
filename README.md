@@ -6,6 +6,8 @@ locally and never stored.
 
 > Course project, AI Engineer — Computer Vision.
 
+**Live demo:** https://desk-jarvis-kdyueqrbhuczpuddmwtg8j.streamlit.app
+
 [![CI](https://github.com/amina178/desk-jarvis/actions/workflows/ci.yml/badge.svg)](https://github.com/amina178/desk-jarvis/actions/workflows/ci.yml)
 
 | Gesture | Action |
