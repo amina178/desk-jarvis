@@ -1,0 +1,19 @@
+{
+  "labels": [
+    "dislike",
+    "fist",
+    "like",
+    "no_gesture",
+    "one",
+    "palm",
+    "peace"
+  ],
+  "input": "landmarks",
+  "size": 160,
+  "actions": {
+    "like": "next_slide",
+    "dislike": "prev_slide",
+    "palm": "toggle_mute",
+    "peace": "screenshot"
+  }
+}

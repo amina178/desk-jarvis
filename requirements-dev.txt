@@ -1,0 +1,16 @@
+-r requirements.txt
+# Training (notebooks 02-03), tests, code style
+torch>=2.4
+torchvision>=0.19
+onnx>=1.16
+onnxscript>=0.1
+huggingface_hub>=0.24
+matplotlib>=3.8
+seaborn>=0.13
+jupyter>=1.0
+nbformat>=5.9
+pytest>=8
+flake8>=7
+black>=24
+# Optional: real key presses in live_demo.py --actions
+pyautogui>=0.9

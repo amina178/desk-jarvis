@@ -1,0 +1,71 @@
+{
+  "comparison": [
+    {
+      "model": "A. MLP",
+      "params": 50951,
+      "onnx_MB": 0.21,
+      "cpu_ms": 0.02,
+      "macroF1_hand_found": 0.974,
+      "macroF1_system": 0.908
+    },
+    {
+      "model": "B. SmallCNN",
+      "params": 1175015,
+      "onnx_MB": 4.7,
+      "cpu_ms": 20.76,
+      "macroF1_hand_found": 0.97,
+      "macroF1_system": 0.957
+    },
+    {
+      "model": "C. MobileNetV3",
+      "params": 1525031,
+      "onnx_MB": 6.11,
+      "cpu_ms": 1.44,
+      "macroF1_hand_found": 0.984,
+      "macroF1_system": 0.976
+    }
+  ],
+  "quantization": [
+    {
+      "model": "mlp",
+      "variant": "int8",
+      "onnx_MB": 0.06,
+      "fp32_MB": 0.21,
+      "cpu_ms": 0.04,
+      "fp32_cpu_ms": 0.03,
+      "macroF1": 0.973
+    },
+    {
+      "model": "mobilenet",
+      "variant": "int8",
+      "onnx_MB": 1.7,
+      "fp32_MB": 6.11,
+      "cpu_ms": 17.72,
+      "fp32_cpu_ms": 1.4,
+      "macroF1": 0.055
+    }
+  ],
+  "pruning": [
+    {
+      "amount": 0.0,
+      "sparsity": 0.0,
+      "macroF1": 0.976,
+      "gzip_MB": 5.66
+    },
+    {
+      "amount": 0.3,
+      "sparsity": 0.3,
+      "macroF1": 0.977,
+      "gzip_MB": 4.39
+    },
+    {
+      "amount": 0.5,
+      "sparsity": 0.5,
+      "macroF1": 0.914,
+      "gzip_MB": 3.4
+    }
+  ],
+  "test_users": 651,
+  "test_samples": 1866,
+  "detection_rate": 0.8758610133170059
+}

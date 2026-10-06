@@ -1,0 +1,42 @@
+{
+  "comparison": [
+    {
+      "model": "Rules (baseline)",
+      "macroF1_mean": 0.462,
+      "macroF1_std": 0.111,
+      "worst_person": 0.278,
+      "cv_seconds": 0.373
+    },
+    {
+      "model": "LogisticRegression",
+      "macroF1_mean": 0.545,
+      "macroF1_std": 0.105,
+      "worst_person": 0.425,
+      "cv_seconds": 0.396
+    },
+    {
+      "model": "HistGradientBoosting",
+      "macroF1_mean": 0.801,
+      "macroF1_std": 0.096,
+      "worst_person": 0.633,
+      "cv_seconds": 14.012
+    },
+    {
+      "model": "MLP",
+      "macroF1_mean": 0.782,
+      "macroF1_std": 0.07,
+      "worst_person": 0.673,
+      "cv_seconds": 6.585
+    }
+  ],
+  "best": "HistGradientBoosting",
+  "latency_ms": 9.62650858499984,
+  "ablation_mean": {
+    "absolute only": 0.8012,
+    "absolute + relative": 0.8012
+  },
+  "subjects": 1,
+  "cv": "blocked time CV (5 folds)",
+  "frames": 7686,
+  "data_source": "raw"
+}

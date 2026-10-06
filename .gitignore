@@ -1,0 +1,10 @@
+__pycache__/
+*.egg-info/
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+models/mediapipe/
+data/raw/
+data/demo/
+results/*.png

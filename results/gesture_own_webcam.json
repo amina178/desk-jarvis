@@ -1,0 +1,13 @@
+{
+  "source": "own webcam recording s01 (desk, MacBook camera)",
+  "frames": 5027,
+  "duration_s": 174.8,
+  "hand_detected": 0.93,
+  "model": "A. MLP (landmarks)",
+  "macroF1_frames_with_hand": 0.981,
+  "macroF1_system_incl_no_gesture": 0.973,
+  "debounced_events": 6,
+  "correct_events": 6,
+  "false_events": 0,
+  "note": "no_gesture was recorded without a hand in frame; background hand movement not tested"
+}

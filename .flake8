@@ -1,0 +1,6 @@
+[flake8]
+max-line-length = 79
+exclude = .venv,build,*.egg-info
+# Notebook builders contain long Markdown table rows inside strings
+per-file-ignores =
+    scripts/build_notebook*.py:E501

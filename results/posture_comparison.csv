@@ -1,0 +1,5 @@
+model,macroF1_mean,macroF1_std,worst_person,cv_seconds
+Rules (baseline),0.462,0.111,0.278,0.373
+LogisticRegression,0.545,0.105,0.425,0.396
+HistGradientBoosting,0.801,0.096,0.633,14.012
+MLP,0.782,0.07,0.673,6.585
